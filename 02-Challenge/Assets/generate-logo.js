@@ -40,15 +40,15 @@ function createShape(text, textColor, shape, shapeColor) {
 
   const svgContent = `
     <svg width="300" height="200" xmlns="http://www.w3.org/2000/svg">
-      ${shapeSvg}
-      <text x="150" y="125" font-size="60" fill="${textColor}" text-anchor="middle" alignment-baseline="middle">${text}</text>
+ ${shapeInstance.render()}    
+   <text x="150" y="125" font-size="60" fill="${textColor}" text-anchor="middle" alignment-baseline="middle">${text}</text>
     </svg>
   `;
   return svgContent;
 }
 
 function saveToFile(filename, content) {
-  fs.writeFileSync(`examples/${filename}`, content);
+  fs.writeFileSync(`newshapes/${filename}`, content);
   console.log("Generated logo.svg");
 }
 
